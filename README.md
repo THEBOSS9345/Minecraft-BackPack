@@ -30,4 +30,6 @@ Carry your real-world loot in style with our Minecraft-Bedrock backpack. Perfect
    - The Backpack (BP) item was thoughtfully created by **soullessyt**. Reach out on Discord: [soullessyt](https://discord.com/users/soullessyt).
    - The scripts powering this creation were masterfully developed by **the_boss9345**. Connect on Discord: [the_boss9345](https://discord.com/users/the_boss9345).
 
- **Enjoy Your Minecraft Backpack**
+   
+
+ **Enjoy Are Minecraft Backpack**
