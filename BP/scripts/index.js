@@ -49,7 +49,7 @@ async function BackPack(player, itemStack, Pages = 1) {
                 }
             },
             s: { iconPath: 'textures/blocks/tinted_glass', itemName: '', itemDesc: [], stackAmount: 1, enchanted: false },
-            T: { iconPath: 'textures/items/backpack', itemName: `${player.name} §6BackPack`, itemDesc: [`§7BackPack Pages: §6${maxPages}`, `§7BackPack Items: §6${items.length}§7`, '§7Right Click Here To Upgrade Your BackPack '], stackAmount: 1, enchanted: false },
+            T: { iconPath: 'textures/items/backpack', itemName: `${player.name} §6BackPack`, itemDesc: [`§7BackPack Pages: §6${maxPages == 0 ? 1 : maxPages}`, `§7BackPack Items: §6${items.length}§7`, '§7Right Click Here To Upgrade Your BackPack '], stackAmount: 1, enchanted: false },
             u: {
                 iconPath: 'anvil', itemName: '§6Upgrade BackPack', itemDesc: ['§7Click to upgrade your backpack'], stackAmount: 1, enchanted: false, callback: () => {
                     if (playerInv.getItem(player.selectedSlot).typeId !== config.BackPackItemId) return player.sendMessage('§cYou can\'t move items from your inventory to your backpack')
