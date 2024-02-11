@@ -1,7 +1,7 @@
 export default {
     ScoreBoardName: 'Money', // The name of the scoreboard
     BackPackItemId: 'soulless:backpack', // The item id of the backpack
-    BannedItemIds: [ // The ids of the banned item Ids that can't be added to the backpack 
+    BannedItemIds: [ // The ids of the banned items that can't be added to the backpack 
         'minecraft:bedrock',
         'minecraft:barrier',
         'minecraft:structure_void',
