@@ -1,7 +1,7 @@
 export default {
-    ScoreBoardName: 'Money',
-    BackPackItemId: 'soulless:backpack',
-    BannedItemIds: [
+    ScoreBoardName: 'Money', // The name of the scoreboard
+    BackPackItemId: 'soulless:backpack', // The item id of the backpack
+    BannedItemIds: [ // The ids of the banned item Ids that can't be added to the backpack 
         'minecraft:bedrock',
         'minecraft:barrier',
         'minecraft:structure_void',
@@ -12,12 +12,12 @@ export default {
         'minecraft:trapped_chest',
         'soulless:backpack'
     ],
-    Pages: {
-        default: 0,
+    Pages: { // The pages of the backpack and their prices
+        default: 0, // The default page
         customPages: {
-            '2': {
-                page: 2,
-                price: 100
+            '2': { // The Upgrade Name
+                page: 2, // The page of the backpack
+                price: 100 // The price of the upgrade
             },
             '3': {
                 page: 3,
