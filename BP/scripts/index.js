@@ -60,8 +60,9 @@ async function BackPack(player, itemStack, Pages = 1) {
                         .title('§6Upgrade BackPack')
                         .dropdown('§6Select a upgrade', upgrades.map((data) => `§6Upgrade: §e${data[0]} §6Price: §e${data[1].price}`), 0)
                         .toggle('§6Confirm Upgrade', false)
-                        .show(player).then(({ canceled, formValues: [updateIndex, Confirm] }) => {
-                            if (canceled) return;
+                        .show(player).then((data) => {
+                        if (data.canceled) return;
+                        const [updateIndex, Confirm] = data.formValues;
                             if (!Confirm) return player.sendMessage('§cYou need to confirm the upgrade');
                             const [UpgradeName, Info] = upgrades[updateIndex];
                             if (GetScore(player, config.ScoreBoardName) < Info.price) return player.sendMessage(`§cYou Need §6${Info.price - GetScore(player, config.ScoreBoardName)} §cMore Upgrade Your BackPack`);
