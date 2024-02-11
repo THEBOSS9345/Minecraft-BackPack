@@ -1,0 +1,23 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "BackPack RP",
+		"description": "BackPack RP",
+		"uuid": "fd1469ce-815e-40e6-875c-22f4d23d5052",
+		"version": [1, 4, 0],
+		"min_engine_version": [1, 17, 0]
+	},
+	"metadata": {
+		"authors": ["Soulless", "THE BOSS9345"],
+		"generated_with": {
+			"blockbench_item_wizard": ["1.0.2"]
+		}
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "0c22a0cb-5793-468c-a9d2-1a63de286bb5",
+			"version": [1, 0, 0]
+		}
+	]
+}

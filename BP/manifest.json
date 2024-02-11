@@ -1,0 +1,35 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Backpack BP",
+    "description": "BackPack BP is a simple backpack system for Minecraft Bedrock Edition.",
+    "min_engine_version": [1, 19, 80],
+    "uuid": "32c591ef-da4b-40b6-b0ef-d870e2665889",
+    "version": [1, 0, 1]
+  },
+  "modules": [
+    {
+      "description": "Data Module",
+      "type": "data",
+      "uuid": "56d6bae8-69f1-4227-a2c2-75caddb4e8d3",
+      "version": [2, 0, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "07354d82-5ab9-490d-b741-64d98654111e",
+      "entry": "scripts/index.js",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.9.0-beta"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.2.0-beta"
+    }
+  ]
+}
