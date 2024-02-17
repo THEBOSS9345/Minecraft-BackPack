@@ -54,7 +54,7 @@ async function BackPack(player, itemStack, Pages = 1) {
                 iconPath: 'anvil', itemName: '§6Upgrade BackPack', itemDesc: ['§7Click to upgrade your backpack'], stackAmount: 1, enchanted: false, callback: () => {
                     if (playerInv.getItem(player.selectedSlot).typeId !== config.BackPackItemId) return player.sendMessage('§cYou can\'t move items from your inventory to your backpack')
                     const currentPageLevel = Object.entries(config.Pages.customPages).find((data) => Database.has(`BackPackLevel:${data[0]}`, itemStack))?.[1].page ?? config.Pages.default;
-                    const upgrades = Object.entries(config.Pages.customPages).filter((data) => currentPageLevel !== undefined && data[1].page > currentPageLevel);
+                    const upgrades = Object.entries(config.Pages.customPages).filter((data) => currentPageLevel !== undefined && data[1].page > currentPageLevel).sort((a, b) => a[1].page - b[1].page)
                     if (upgrades.length === 0) return player.sendMessage('§cYou have the max level of backpack');
                     new ModalFormData()
                         .title('§6Upgrade BackPack')
