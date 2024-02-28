@@ -23,7 +23,7 @@ async function BackPack(player, itemStack, Pages = 1) {
     const form = new ChestForm()
         .title(`§6BackPack §ePage §6${Pages}`)
         .pattern([0, 0], [
-            'ussbTnsss',
+            'sssbTnsss',
             'aaaaaaaaa',
             'aaaaaaaaa',
             'aaaaaaaaa',
@@ -49,9 +49,8 @@ async function BackPack(player, itemStack, Pages = 1) {
                 }
             },
             s: { iconPath: 'textures/blocks/tinted_glass', itemName: '', itemDesc: [], stackAmount: 1, enchanted: false },
-            T: { iconPath: 'textures/items/backpack', itemName: `${player.name} §6BackPack`, itemDesc: [`§7BackPack Pages: §6${maxPages == 0 ? 1 : maxPages}`, `§7BackPack Items: §6${items.length}§7`, '§7Right Click Here To Upgrade Your BackPack '], stackAmount: 1, enchanted: false },
-            u: {
-                iconPath: 'anvil', itemName: '§6Upgrade BackPack', itemDesc: ['§7Click to upgrade your backpack'], stackAmount: 1, enchanted: false, callback: () => {
+            T: {
+                iconPath: 'textures/items/backpack', itemName: `${player.name} §6BackPack`, itemDesc: [`§7BackPack Pages: §6${maxPages == 0 ? 1 : maxPages}`, `§7BackPack Items: §6${items.length}§7`, '§7Left Click To Upgrade Your BackPack '], stackAmount: 1, enchanted: false, callback: () => {
                     if (playerInv.getItem(player.selectedSlot).typeId !== config.BackPackItemId) return player.sendMessage('§cYou can\'t move items from your inventory to your backpack')
                     const currentPageLevel = Object.entries(config.Pages.customPages).find((data) => Database.has(`BackPackLevel:${data[0]}`, itemStack))?.[1].page ?? config.Pages.default;
                     const upgrades = Object.entries(config.Pages.customPages).filter((data) => currentPageLevel !== undefined && data[1].page > currentPageLevel).sort((a, b) => a[1].page - b[1].page)
@@ -61,8 +60,8 @@ async function BackPack(player, itemStack, Pages = 1) {
                         .dropdown('§6Select a upgrade', upgrades.map((data) => `§6Upgrade: §e${data[0]} §6Price: §e${data[1].price}`), 0)
                         .toggle('§6Confirm Upgrade', false)
                         .show(player).then((data) => {
-                        if (data.canceled) return;
-                        const [updateIndex, Confirm] = data.formValues;
+                            if (data.canceled) return;
+                            const [updateIndex, Confirm] = data.formValues;
                             if (!Confirm) return player.sendMessage('§cYou need to confirm the upgrade');
                             const [UpgradeName, Info] = upgrades[updateIndex];
                             if (GetScore(player, config.ScoreBoardName) < Info.price) return player.sendMessage(`§cYou Need §6${Info.price - GetScore(player, config.ScoreBoardName)} §cMore Upgrade Your BackPack`);
