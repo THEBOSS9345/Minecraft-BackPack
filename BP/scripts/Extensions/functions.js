@@ -1,4 +1,4 @@
-import { ItemStack, Player, world } from "@minecraft/server";
+import { EnchantmentType, ItemStack, Player, world } from "@minecraft/server";
 import config from "../config";
 /**
  * 
@@ -91,8 +91,12 @@ export function giveItem(player, item) {
         if (inv.emptySlotsCount < 1) return player.sendMessage('§cYou do not have enough space in your inventory to take this item')
         const itemStack = new ItemStack(item.id, item.amount)
         if (item.enchantments && item.enchantments.length > 0) {
-            const enchantComp = itemStack.getComponent("enchantable")
-            for (const enchant of item.enchantments) enchantComp.addEnchantment(enchant);
+            const enchantComp = itemStack.getComponent("enchantable");
+            for (const enchant of item.enchantments)
+            enchantComp.addEnchantment({
+                type: new EnchantmentType(enchant.type),
+                level: enchant.level
+            })
         }
         if (item?.durability) itemStack.getComponent('durability').damage = item.durability
         if (item?.nameTag) itemStack.nameTag = item.nameTag

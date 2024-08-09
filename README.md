@@ -2,7 +2,11 @@
 
 Carry your real-world loot in style with our Minecraft-Bedrock backpack. Perfect for your everyday journey or the next big expedition. Gear up and level up! 🌲⛏️🎒
 
-1. **Clone or Download:**
+1. **Bugs Fixed:**
+
+   - Fixed an issue where enchanted items could not be returned to the user's inventory.
+
+2. **Clone or Download:**
    - If you're familiar with Git, clone the repository using:
    - 
      ```bash
@@ -10,7 +14,7 @@ Carry your real-world loot in style with our Minecraft-Bedrock backpack. Perfect
      ```
    - If you prefer downloading a ZIP file, click on the "Code" button on GitHub and select "Download ZIP."
 
-2. ## How it Works:
+3. ## How it Works:
 
 - **Home Menu**
   ![Home Menu](https://github.com/THEBOSS9345/Minecraft-BackPack/assets/125090249/107d56c6-baa0-4da2-9d15-fa2de0918c3a)

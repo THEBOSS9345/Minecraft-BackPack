@@ -80,7 +80,7 @@ async function BackPack(player, itemStack, Pages = 1) {
         const itemName = itemInfo.item.nameTag ? itemInfo.item.nameTag : formatString(itemInfo.item.id.split(':')[1]);
         form.button(itemInfo.slot, `§b${itemName}`, itemDes, itemInfo.item.id, itemInfo.item.amount, itemInfo.item.enchantments.length > 0, () => {
             if (playerInv.getItem(player.selectedSlotIndex).typeId !== config.BackPackItemId) return player.sendMessage('§cYou can\'t move items from your inventory to your backpack')
-            const recheckitems = Database.entries(itemStack).filter((data) => data[0].includes('BackPack:') && data[1]).map((data) => data[1]).filter((data) => data.page === Pages);
+            const recheckitems = Database.entries(itemStack).filter((data) => data[0].includes('BackPack:') && data[1]).map((data) => data[1]).filter((data) => data.page === Pages); 
             if (recheckitems[i].slot !== itemInfo.slot) return player.sendMessage('§cThat item is no longer in that slot in your backpack')
             giveItem(player, itemInfo.item).then(() => {
                 Database.delete(`BackPack:${itemInfo.slot}:${Pages}`, itemStack);
